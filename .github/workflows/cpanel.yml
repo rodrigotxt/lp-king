@@ -11,7 +11,7 @@ jobs:
     
     steps:
       - name: Checkout do Código
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4 # Usa a action para fazer checkout do seu repositório
 
       - name: Deploy para CPanel via FTP/SFTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.0
@@ -20,5 +20,5 @@ jobs:
           username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: './'
-          server-dir: ${{ secrets.REMOTE_DIR }}
+          server-dir: ${{ secrets.REMOTE_DIR }} # ex: ./public_html/online/
           protocol: ftp
